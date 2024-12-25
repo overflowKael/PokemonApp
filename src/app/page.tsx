@@ -1,8 +1,5 @@
-import { List } from "postcss/lib/list";
-import { ReactElement } from "react";
 import Image from 'next/image';
 import { geist } from '../fonts/index';
-import { geist_Mono } from '../fonts/index';
 interface ListPokemons {
   count : number , 
   next? : string, 
