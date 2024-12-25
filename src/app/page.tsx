@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import { geist } from '../fonts/index';
+import { PokemonCard } from "../components/pokemons-components/pokemon-card";
 interface ListPokemons {
   count : number , 
   next? : string, 
@@ -24,27 +23,16 @@ export default async function Home() {
     pokemons[index].image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index+1}.svg`
   })
   return (
-    <main className="flex flex-col items-center justify-center">
+    <main className="flex flex-col items-center justify-center py-20">
       <h1 className="text-6xl font-bold">
         Welcome to <span className="text-primary">Pokemon App</span>
       </h1>
 
-      <ul className="flex flex-wrap w-[80%] gap-5 mt-5 justify-center">
+      <ul className="flex flex-wrap w-[90%] gap-10 mt-5 justify-center">
         {
-          pokemons.map((pokemon : Pokemon , index : number)=>{
-            return (
-              <li key={pokemon.name} className={`flex flex px-4 py-5 border-2 rounded-lg ${geist.className} items-center`}>
-                <Image src={pokemon.image} alt={`${pokemon.name} image`} width={200} height={200} ></Image>
-                <div id="pokemon-info" className=" flex flex-col h-full items-center px-4 ">
-                <h1 className="text-2xl ">  Pokemon { index + 1 }</h1>
-                <a  className="text-2xl font-bold self-center" href={pokemon.url} target="_blank" rel="noreferrer">
-                  {pokemon.name}
-                </a>
-                </div>
-                
-              </li>
-            )
-          })
+          pokemons.map((pokemon : Pokemon , index : number)=>(
+            <PokemonCard pokemon={pokemon} key={index}/>
+          ))
         }
       </ul>
       
