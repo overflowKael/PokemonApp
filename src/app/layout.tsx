@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/ui";
+import { GlobalContextProvider } from "./contexts/globalContext";
+import { Toaster } from "sonner"
 export function generateMetadata(): Metadata {
   return {
     title: "Pokemon App",
@@ -20,7 +22,14 @@ export default function RootLayout({
     <html lang="en"  className="dark h-full w-full" suppressHydrationWarning>
       <body className=" w-full">
           <Header />
-          {children}
+          <GlobalContextProvider>
+            <Toaster richColors >
+              
+            </Toaster>
+            {children}
+           
+          </GlobalContextProvider>
+          
       </body>
     </html>
   );

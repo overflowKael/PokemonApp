@@ -1,3 +1,9 @@
+export interface Pokemon {
+    name : string; 
+    url : string;
+    id : number;
+    image : string | undefined;
+}
 export interface PokemonStructure {
     abilities:                Ability[];
     base_experience:          number;

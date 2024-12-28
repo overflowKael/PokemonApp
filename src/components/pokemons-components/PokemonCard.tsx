@@ -6,12 +6,7 @@ import { geist } from '../../fonts/index';
 import { Divider} from "@nextui-org/divider";
 import {Card, CardBody, CardFooter} from "@nextui-org/card";
 import { useRouter } from "next/navigation";
-interface Pokemon {
-    name : string; 
-    url : string;
-    id : number;
-    image : string;
-}
+import { Pokemon } from "@/lib/pokemonJSON";
   
 
 
