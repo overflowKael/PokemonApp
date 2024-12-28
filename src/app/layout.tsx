@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar } from "@/components/ui";
+import { Header } from "@/components/ui";
 export function generateMetadata(): Metadata {
   return {
     title: "Pokemon App",
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en"  className="dark h-full w-full" suppressHydrationWarning>
       <body className=" w-full">
-          <Navbar />
+          <Header />
           {children}
       </body>
     </html>
