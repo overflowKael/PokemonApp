@@ -1,4 +1,4 @@
-import { PokemonCard } from "../components/pokemons-components/pokemon-card";
+import { PokemonCard } from "../components/pokemons-components/PokemonCard";
 interface ListPokemons {
   count : number , 
   next? : string, 
@@ -24,9 +24,6 @@ export default async function Home() {
   })
   return (
     <main className="flex flex-col items-center justify-center py-20">
-      <h1 className="text-6xl font-bold">
-        Welcome to <span className="text-primary">Pokemon App</span>
-      </h1>
 
       <ul className="flex flex-wrap w-[90%] gap-10 mt-5 justify-center">
         {

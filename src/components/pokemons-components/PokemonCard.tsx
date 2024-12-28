@@ -1,9 +1,11 @@
+"use client";
+
 import {Image} from "@nextui-org/image";
 import NextImage from "next/image";
 import { geist } from '../../fonts/index';
 import { Divider} from "@nextui-org/divider";
 import {Card, CardBody, CardFooter} from "@nextui-org/card";
-
+import { useRouter } from "next/navigation";
 interface Pokemon {
     name : string; 
     url : string;
@@ -12,12 +14,17 @@ interface Pokemon {
 }
   
 
+
 export const PokemonCard = ( {pokemon} : {pokemon : Pokemon}) =>{
-    return (
-        <Card key={pokemon.id} isPressable={true} className='flex-grow max-sm:max-w-[300px] md:min-w-[300px]  max-w-[400px] rounded-lg' shadow='md'>
+  const router = useRouter();
+  const handleClick = () =>{
+    router.push(`/pokemon/${pokemon.id}`)
+ }  
+  return (
+        <Card key={pokemon.id} isPressable={true} className='flex-grow max-sm:max-w-[300px] md:min-w-[300px]  max-w-[500px] rounded-lg bg-background flex-grow-1' shadow='md' onClick={handleClick}>
           <CardBody className='flex justify-center items-center'>
-            <Image src={pokemon.image} alt={`${pokemon.name} Image`} isZoomed={true} width={200} height={200} as={NextImage} 
-              className='rounded-lg w-[500px]'
+            <Image src={pokemon.image} alt={`${pokemon.name} Image`} isZoomed width={250} height={150 } as={NextImage} 
+              className='rounded-lg w-full object-cover'
             />
 
           </CardBody>
