@@ -1,6 +1,5 @@
 "use client";
 import { PokemonStructure } from "@/lib/pokemonJSON";
-import { notFound } from "next/navigation";
 import { Image } from "@nextui-org/image";
 import { Button } from "@nextui-org/button";
 import { geist } from "@/fonts";
