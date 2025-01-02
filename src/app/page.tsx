@@ -1,17 +1,5 @@
 import { PokemonCard } from "../components/pokemons-components/PokemonCard";
-interface ListPokemons {
-  count : number , 
-  next? : string, 
-  previous? : string , 
-  results : Pokemon[];
-}
-
-interface Pokemon {
-  name : string; 
-  url : string;
-  id : number;
-  image : string;
-}
+import { ListPokemons, Pokemon } from "@/lib/pokemonJSON";
 
 export default async function Home() {
   const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
